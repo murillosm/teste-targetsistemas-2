@@ -1,7 +1,7 @@
 import json
 
 def processar_faturamento(dados_faturamento):
-    dias_com_faturamento = [dia["faturamento"] for dia in dados_faturamento if dia["faturamento"] > 0]
+    dias_com_faturamento = [dia["valor"] for dia in dados_faturamento if dia["valor"] > 0]
 
     menor_faturamento = min(dias_com_faturamento)
 
@@ -18,7 +18,7 @@ def ler_arquivo_json(caminho_arquivo):
         dados_faturamento = json.load(f)
     return dados_faturamento
 
-caminho_arquivo = "faturamento.json"
+caminho_arquivo = "dados.json"
 
 dados_faturamento = ler_arquivo_json(caminho_arquivo)
 
